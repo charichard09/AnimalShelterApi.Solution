@@ -2,6 +2,7 @@
 using AnimalShelterApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AnimalShelterApi.Migrations
 {
     [DbContext(typeof(AnimalShelterApiContext))]
-    partial class AnimalShelterApiContextModelSnapshot : ModelSnapshot
+    [Migration("20230120191659_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +51,7 @@ namespace AnimalShelterApi.Migrations
                             AnimalId = 1,
                             Age = "7m",
                             Name = "Fireheart",
-                            Sex = "Male",
+                            Sex = "male",
                             Species = "Cat",
                             Weight = "6.8lbs"
                         },
@@ -94,7 +96,7 @@ namespace AnimalShelterApi.Migrations
                             AnimalId = 6,
                             Age = "2y 2m",
                             Name = "Dexter",
-                            Sex = "Male",
+                            Sex = "male",
                             Species = "Dog",
                             Weight = "66.4lbs"
                         },
