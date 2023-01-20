@@ -35,6 +35,9 @@ public class AnimalsController : ControllerBase
     }
 
     // NON-MVP: handle string ages and string weights
+    // issue with IQueryable being unable to use Regex, IQueryable queries database directly
+    // somehow need to loop through db which is locally stored checking ageParameter and weight parameters conditions
+    // and using regex, then passing the results to the query
     // Regex regexMonth = new Regex(@"\d+m");
     // Regex regexNumber = new Regex(@"\d+");
     // Regex regexYear = new Regex(@"\d+y");
