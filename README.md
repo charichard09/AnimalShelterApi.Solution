@@ -79,7 +79,6 @@ DELETE http://localhost:5000/api/v1/animals/{id}
 * _Tip: You can find all AnimalId's from requesting GET http://localhost:5000/api/v1/animals/ end point_
 
 ## Path Parameters
-* GET http://localhost:5000/api/v1/animals/ endpoint optional query parameters:
 | Parameter | Type | Required | Description |
 | :---: | :---: | :---: | --- |
 | Species | String | Not Required | Returns animals that match cat or dog |
