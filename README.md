@@ -18,7 +18,9 @@
 ## Description
 
 _Animal Shelter API is an API that when requested to GET all animals or an individual animal, will return a reponse containing all animals or an individual animal. Animal Shelter API is seeded with 8 animals in the shelter database, but also has full Create, Update, and Delete functionality for any new or existing animals._
-_For this projects Further Exploration, Versioning was implemented. Versioning is the creation and management of multiple web API versions. How it is used here is to have a version 1 as a base minimum viable product, and have a version 2 as a working but work in progress version with additional code and comments_
+
+## Further Exploration: Versioning 
+_Versioning is the creation and management of multiple web API versions. How it is used here is to have a version 1 as a base minimum viable product, and have a version 2 as a working but work in progress version with additional code and comments_
 
 ## Technologies Used
 
