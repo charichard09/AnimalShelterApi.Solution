@@ -1,40 +1,34 @@
-# _Pierre's Sweet and Savory Treats_
+# _Animal Shelter API_
 
 #### By _**Richard Cha**_
 
-#### _This web app allows adding of new Treats and Flavors, and assigning Treats Flavors and Flavors Treats._
+#### _This web API will list available cats and dogs at a shelter_
 
 ### <u>Table of Contents</u>
 * <a href="#Description">Description</a>
-    * <a href="#-description">Description</a>
-    * <a href="#-known-bugs">Known Bugs</a>
-    * <a href="#-built-with">Built With</a>
-* <a href="#-getting-started">Getting Started</a>
-    * <a href="#-prerequisites">Prerequisites</a>
-    * <a href="#-setup-and-use">Setup and Use</a>
-* <a href="#-api-documentation">API Documentation</a>
-* <a href="#-contributors">Auxiliary</a>
-    * <a href="#-contributors">Contributors</a>
-    * <a href="#-contact-and-support">Contact</a>
-    * <a href="#-license">License</a>
-    * <a href="#-acknowledgements">Acknowledgements</a>
+* <a href="#Technologies Used">Technologies Used</a>
+* <a href="#Setup/Installation Requirements">Setup/Installation Requirements</a>
+* <a href="#Example Query">Example Query and JSON Response</a>
+* <a href="#API Endpoints">API Endpoints</a>
+* <a href="#Path Parameters">Path Parameters</a>
+* <a href="#Versions">Versions</a>
+* <a href="#Known Bugs">Known Bugs</a>
+* <a href="#License">License</a>
 
 ## Description
 
-_This web application gives Create, Update, Delete, Adding a Flavor to a Treat, and Adding a Treat to a Flavor functionality to users who register and login to an account for both a Treats and a Flavors, updating everything to a database. It will then display all Treats and Flavors on the homepage and a specific Treat or Flavor details to everyone whether logged in or not._
+_Animal Shelter API is an API that when requested to GET all animals or an individual animal, will return a reponse containing all animals or an individual animal. Animal Shelter API is seeded with 8 animals in the shelter database, but also has full Create, Update, and Delete functionality for any new or existing animals._
 
 ## Technologies Used
 
 * _C#_
 * _.Net 6_
-* _ASP.NET Core 6 MVC_
+* _ASP.NET Core Web API_
 * _Visual Studio Code 2019_
 * _MySql_
 * _MySql Workbench_
 * _Entity Framework Core 6_
 * _Pomelo Entity Framework Core 6 MySql_
-* _Razor 6_
-* _BootStrap_
 * _ASP.NET Core Identity_
 
 ## Setup/Installation Requirements
@@ -62,7 +56,7 @@ replace [YOUR-USERNAME-HERE] and [YOUR-PASSWORD-HERE] with the your own user and
 * _Then run the program with command :_
 * _$ dotnet watch run_
 
-## Endpoints
+## API Endpoints
 ```
 GET http://localhost:5000/api/v1/animals/
 GET http://localhost:5000/api/v1/animals/{id}
@@ -72,8 +66,14 @@ DELETE http://localhost:5000/api/v1/animals/{id}
 ```
 * _Replace {id} with the AnimalId you would like to GET, PUT, or DELETE_
 * _Tip: You can find all AnimalId's from requesting GET http://localhost:5000/api/v1/animals/ end point_
+
+## Path Parameters
 * GET http://localhost:5000/api/v1/animals/ endpoint optional query parameters:
-* 
+| Parameter | Type | Required | Description |
+| :---: | :---: | :---: | --- |
+| Species | String | Not Required | Returns animals that match cat or dog |
+| Name | String | Not Required | Returns animals that match name |
+| Sex | String | Not Required | Returns animals that match sex |
 
 ## Example Query
 ```
@@ -92,9 +92,15 @@ https://localhost:5000/api/v1/animals/?name=Clint&species=Cat&gender=Male
 }
 ```
 
+## Versions
+* _Version 1: Stable version working version with no bugs._ 
+* _Version 2: A non stable work in progress version that will add additional search query parameters and the logic to handle them_
+
 ## Known Bugs
 
-* _None_
+* _Version 2: Linq query for search parameter handling with Regular Expressions is not working and throws the following error:
+System.InvalidOperationException...
+Translation of method 'System.Text.RegularExpressions.Regex.Match' failed_
 
 ## License
 
@@ -120,4 +126,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Copyright (c) _1-13-23_ _Richard Cha_
+Copyright (c) _1-20-23_ _Richard Cha_

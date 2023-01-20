@@ -20,7 +20,7 @@ public class AnimalsController : ControllerBase
   }
 
   [HttpGet]
-  public async Task<List<Animal>> Get(string species, string ageParameter, string name, string weight, string sex)
+  public async Task<List<Animal>> Get(string species, string name, string sex)
   {
     IQueryable<Animal> query = _db.Animals.AsQueryable();
 
