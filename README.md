@@ -33,6 +33,7 @@ _Versioning is the creation and management of multiple web API versions. How it 
 * _Entity Framework Core 6_
 * _Pomelo Entity Framework Core 6 MySql_
 * _ASP.NET Core Identity_
+* _(Optional) Postman_
 
 ## Setup/Installation Requirements
 
