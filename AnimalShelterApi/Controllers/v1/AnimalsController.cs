@@ -89,4 +89,38 @@ public class AnimalsController : ControllerBase
 
     return CreatedAtAction(nameof(GetAnimal), new { id = animal.AnimalId }, animal);
   }
+
+  [HttpPut("{id}")]
+  public async Task<IActionResult> Put(int id, Animal animal)
+  {
+    if (id != animal.AnimalId)
+    {
+      return BadRequest();
+    }
+
+    _db.Animals.Update(animal);
+
+    try
+    {
+      await _db.SaveChangesAsync();
+    }
+    catch (DbUpdateConcurrencyException)
+    {
+      if (!AnimalExists(id))
+      {
+        return NotFound();
+      }
+      else
+      {
+        throw;
+      }
+    }
+
+    return NoContent();
+  }
+
+  private bool AnimalExists(int id)
+  {
+    return _db.Animals.Any(e => e.AnimalId == id);
+  }
 }
