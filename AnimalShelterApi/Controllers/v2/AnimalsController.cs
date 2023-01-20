@@ -5,11 +5,11 @@ using System;
 using System.Text.RegularExpressions;
 using System.Linq;
 
-namespace AnimalShelterApi.Controllers.v1;
+namespace AnimalShelterApi.Controllers.v2;
 
 [ApiController]
 [Route("api/v{version:apiVersion}/[controller]")]
-[ApiVersion("1.0")]
+[ApiVersion("2.0")]
 public class AnimalsController : ControllerBase
 {
   private AnimalShelterApiContext _db;
@@ -33,6 +33,33 @@ public class AnimalsController : ControllerBase
     {
       query = query.Where(entry => entry.Name == name);
     }
+
+    // NON-MVP: handle string ages and string weights
+    // Regex regexMonth = new Regex(@"\d+m");
+    // Regex regexNumber = new Regex(@"\d+");
+    // Regex regexYear = new Regex(@"\d+y");
+
+    // switch (ageParameter)
+    // {
+    //   case "less than 6 months":
+    //     query = query.AsEnumerable().Where(entry => entry.Age.Contains("m") && (entry.Age.Contains("y") == false) && Int32.Parse(regexNumber.Match(regexMonth.Match(entry.Age).Value).Value) < 6);
+    //     query = query.AsQueryable();
+    //     break;
+    //   case "6 months to 5 years":
+    //     query = query.Where(entry => ((entry.Age.Contains("m") && (entry.Age.Contains("y") == false))) || (entry.Age.Contains("m") && (entry.Age.Contains("y"))) && Int32.Parse(regexNumber.Match(regexMonth.Match(entry.Age).Value).Value) >= 6 && Int32.Parse(regexNumber.Match(regexYear.Match(entry.Age).Value).Value) < 5);
+    //     break;
+    //   case "5 years to 10 years":
+    //     query = query.Where(entry => entry.Age.Contains("y") && Int32.Parse(regexNumber.Match(regexYear.Match(entry.Age).Value).Value) >= 5 && Int32.Parse(regexNumber.Match(regexYear.Match(entry.Age).Value).Value) < 10);
+    //     break;
+    //   case "10 years or older":
+    //     query = query.Where(entry => entry.Age.Contains("y") && Int32.Parse(regexNumber.Match(regexYear.Match(entry.Age).Value).Value) >= 10);
+    //     break;
+    // }
+
+    // if (weight != null)
+    // {
+    //   query = query.Where(entry => entry.Weight == weight);
+    // }
 
     if (sex != null)
     {
