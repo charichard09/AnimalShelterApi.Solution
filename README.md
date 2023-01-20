@@ -18,6 +18,7 @@
 ## Description
 
 _Animal Shelter API is an API that when requested to GET all animals or an individual animal, will return a reponse containing all animals or an individual animal. Animal Shelter API is seeded with 8 animals in the shelter database, but also has full Create, Update, and Delete functionality for any new or existing animals._
+_For this projects Further Exploration, Versioning was implemented. Versioning is the creation and management of multiple web API versions. How it is used here is to have a version 1 as a base minimum viable product, and have a version 2 as a working but work in progress version with additional code and comments_
 
 ## Technologies Used
 
@@ -38,23 +39,33 @@ _Animal Shelter API is an API that when requested to GET all animals or an indiv
 * _Setup MySql Workbench:_
 * [OS X and Windows Instructions](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql)
 * _Clone this repo to a local directory_
-* _Navigate to the local directory (YourPath/PierresTreats.Solution/PierresTreats) and create a new file "appsettings.json" 
+* _Navigate to the local directory (YourPath/AnimalShelterApi.Solution/AnimalShelterApi) and create a new file "appsettings.json" 
 * _Open this file with Visual Studio Code 2019 and add:
 ```
 {
-    "ConnectionStrings": {
-        "DefaultConnection": "Server=localhost;Port=3306;database=[YOUR-DB-NAME];uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
     }
-} 
-```
-replace [YOUR-USERNAME-HERE] and [YOUR-PASSWORD-HERE] with the your own user and password values, and [YOUR-DB-NAME] with any name you'd like to call the database, i.e. "pierres_treats"_
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=[YOUR-DB-NAME];uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
+  }
+}
 
-* _Using Terminal on OS X or PowerShell on Windows navigate to the directory that this repo was cloned to, then the PierresTreats folder (YourPath/PierresTreats.Solution/PierresTreats) and run the terminal commands (without the '$'):_ 
+```
+replace [YOUR-USERNAME-HERE] and [YOUR-PASSWORD-HERE] with the your own user and password values, and [YOUR-DB-NAME] with any name you'd like to call the database, i.e. "animal_shelter_api"_
+
+* _Using Terminal on OS X or PowerShell on Windows navigate to the directory that this repo was cloned to, then the AnimalShelterApi folder (YourPath/AnimalShelterApi.Solution/AnimalShelterApi) and run the terminal commands (without the '$'):_ 
 * _$ dotnet ef database update_
 * _Making sure you've followed the MySqlWorkbench installation instructions, open MySql Workbench and select the Local 3306 server_
 * _Confirm the database [YOUR-DB-NAME] that you named was successfully created by clicking on the "Schemas" tab and seeing the schema listed._ 
 * _Then run the program with command :_
 * _$ dotnet watch run_
+* _This will autolaunch Swagger in your browser_
+* _Test any API endpoints in Swagger, POSTMAN, or your own app_
 
 ## API Endpoints
 ```
