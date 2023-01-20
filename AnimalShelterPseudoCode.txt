@@ -1,0 +1,133 @@
+Animal Shelter
+Create an API that will list available cats and dogs at a shelter
+
+- full CRUD functionality
+- versioning
+- README documenting API endpoints and further exploration
+- NON-MVP: pagination
+
+
+// add .gitignore
+
+// setting up dotnet Web API scaffolding
+
+run
+> $ dotnet new webapi -o CretaceousApi --framework net6.0
+
+> comment out global nullable in .csproj
+ 
+> add and change to appsettings.Development.json
+
+> add else condition to Program.cs HttpsRedirection()
+
+> change launchsettings.json ProjectName > applicationUrl to 5001 5000 ports
+
+> dotnet run and send GET request to localhost:5000 confirm info request is started and finished in terminal (will get 404)
+
+> check swagger if API endpoints are there for WeatherForecast 
+
+> delete WeatherForecastController and model
+
+// setting up our Database
+
+run:
+> $ dotnet add package Microsoft.EntityFrameworkCore -v 6.0.0
+> $ dotnet add package Microsoft.EntityFrameworkCore.Design -v  6.0.0
+> $ dotnet add package Pomelo.EntityFrameworkCore.MySql -v 6.0.0
+
+> update Program.cs /w builder.Services.AddDbContext… code
+
+> update appsettings.json with “ConnectionStrings”… db connection string
+
+
+// add entity models
+> create Animal.cs /w AnimalId, Name, Species, Age, Weight, Sex
+
+> create AnimalShelterContext.cs /w DbSet<Animal> Animals, etc.
+
+run: 
+> $ dotnet ef migrations add Initial
+> $ dotnet ef database update
+
+> confirm database is created 
+
+> add seeding to AnimalShelterContext.cs (see Oregon Humane Society dogs and cats)
+
+run: 
+> $ dotnet ef migrations add Seeding
+> $ dotnet ef database update
+
+
+// create controllers for CRUD for Animal entity
+
+> create folder Controllers and AnimalsController.cs
+
+> READ, [HttpGet] Get() action
+	> add code to handle query strings for each animals properties
+
+> READ [HttpGet("{id}")], GetAnimal() action
+
+> confirm endpoints look like and work:
+GET http://localhost:5000/api/animals
+GET http://localhost:5000/api/animals/2
+GET http://localhost:5000/api/animals?species=dog
+GET http://localhost:5000/api/animals?minimumAge=3
+
+> CREATE, [HttpPost] Post() action
+
+> confirm create endpoint by passing a JSON body of animal as POST to  http://localhost:5000/api/animals and seeing in GET
+{
+  "species": "",
+  "name": "",
+  "age": x,
+  "weight": x,
+  "sex": ""
+}
+
+> PUT [HttpPut("{id}") Put() action
+
+> confirm Put updates an existing animal by passing a JSON body as PUT to PUT http://localhost:5000/api/animals/{id} and seeing in GET
+{
+  "animalId": x,
+  "species": "",
+  "name": "",
+  "age": x,
+  "weight": x,
+  "sex": ""
+}
+
+> DELETE, [HttpDelete("{id}") DeleteAnimal() action
+
+> confirm Delete works DELETE http://localhost:5000/api/animals/{id}
+
+
+// add versioning
+
+> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
