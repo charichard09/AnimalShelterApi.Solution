@@ -111,7 +111,7 @@ https://localhost:5000/api/v1/animals/?name=Clint&species=Cat&gender=Male
 
 ## Known Bugs
 
-* _Version 2: Linq query for search parameter handling with Regular Expressions is not working and throws the following error:
+* _Version 2: Linq query method Where() and Regular Expressions not working, throws the following error:
 System.InvalidOperationException...
 Translation of method 'System.Text.RegularExpressions.Regex.Match' failed_
 
