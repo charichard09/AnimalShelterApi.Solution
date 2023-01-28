@@ -147,8 +147,8 @@ PUT http://localhost:5000/api/v1/animals/{id}
 ```
 * _Updates an animal in the database_
 
-Postman Example:
-Start a new PUT request in Postman and enter the above URL. A PUT request must have a request body when sending.
+Postman Example:  
+Start a new PUT request in Postman and enter the above URL. A PUT request must have a request body when sending.  
 To create a request body, click the Body tab located under where you entered the url, and select raw. In the dropdown menu to the right change Text to JSON.
 Enter a JSON request body replacing "string" with the values you would like to enter and 0 with the AnimalId you would like to update. Note: You must enter an AnimalId in the request body, and the entire body's values must still be assigned with either new or old values.
 Example Request Body:
