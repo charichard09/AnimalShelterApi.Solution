@@ -165,7 +165,6 @@ Example Request Body:
 Click Send. You should see a JSON response with the animal that you updated.
 
 ```
-```
 DELETE http://localhost:5000/api/v1/animals/{id}
 ```
 * _Deletes an animal in the database_
