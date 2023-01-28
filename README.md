@@ -110,7 +110,7 @@ GET http://localhost:5000/api/v1/animals/{id}
 
 Postman Example:  
 Start a new GET request in Postman and enter the above URL. Click Send. You should see a JSON response with the animal that matches the AnimalId you entered.  
-Example Return Response for GET http://localhost:5000/api/v1/animals/7:
+Example Return Response for AnimalId equals 7:
 ```
 {
   "animalId": 7,
